@@ -34,4 +34,15 @@ jobs:
         run: npm start &
 
       - name: Run Cypress tests 🧪
-        run: npm run cy:run
+        run: npm run e2e
+
+      - name: Upload any screenshots and videos 📼
+        uses: actions/upload-artifact@v2
+        # make sure to run this step
+        # even if the previous step fails
+        if: always()
+        with:
+          name: test-artifacts
+          path: |
+            cypress/videos
+            cypress/screenshots

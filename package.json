@@ -7,7 +7,8 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "e2e": "start-test 8080 cy:run"
   },
   "repository": {
     "type": "git",
